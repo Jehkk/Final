@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>EventItem</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form>
+            <div class="form-group">
+                <label class="control-label">Name</label>
+                <input id="event-name" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Description</label>
+                <input id="event-description" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Event DateTime</label>
+                <input id="event-date"/>
+            </div>
+            <div class="form-group">
+                <button type="button" id="save-create-button">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="add-item-error" class="text-danger"></div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

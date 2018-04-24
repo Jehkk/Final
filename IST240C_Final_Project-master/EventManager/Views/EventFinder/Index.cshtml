@@ -1,0 +1,62 @@
+﻿@model EventManager.Models.EventViewModel
+@using Humanizer
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Event Finder</h2>
+
+<p>
+    Notice people near you!
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Host UserName
+            </th>
+            <th>
+                Event Name
+            </th>
+            <th>
+                Event Description
+            </th>
+            <th>
+                Event Date Time
+            </th>
+            <th>
+                Event DateTime Created
+            </th>
+            <th>
+                <!---->
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Events)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HostUUID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventCreated)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
